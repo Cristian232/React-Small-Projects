@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Nunito:wght@300;400&family=Roboto&family=Source+Sans+Pro:wght@600&family=Space+Grotesk:wght@500&display=swap');
+
+#heading {
+    font-family: 'Space Grotesk', "Comic Sans MS", "Helvetica Neue",cursive;
+}
+
+#subHeading {
+    color: white;
+    font-family: 'Roboto', cursive;
+}
+
+#pContent {
+    font-family: 'Nunito',cursive;
+}
+
+.sProjIcon {
+    color: white;
+}
+
+.about, .home, .contact {
+    border: 1px outset rgba(8, 139, 213, 0.5);
+}
+
+.about:hover, .home:hover, .contact:hover {
+    /* From https://css.glass */
+    background: #D5BFA5;
+    border-radius: 16px;
+    box-shadow: 2px 2px 20px rgba(30, 29, 29, 0.88);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px groove rgba(8, 139, 213, 0.1);
+    text-shadow: 1px 1px #6e6d6d;
+}
+
+.smallProjects-item {
+    border: 1px outset rgba(8, 139, 213, 0.5);
+    box-shadow: 1px 1px 10px rgba(30, 29, 29, 0.4);
+}
+
+.smallProjects-item:hover {
+    border: 1px outset rgba(8, 139, 213, 0.5);
+    box-shadow: 2px 2px 20px rgba(30, 29, 29, 0.88);
+}
