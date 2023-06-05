@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {DiReact} from "react-icons/di";
 import {SiTailwindcss} from "react-icons/si";
+import {GiHamburgerMenu} from "react-icons/gi";
 
 const Header = () => {
     const [state, setState] = useState([]);
@@ -16,6 +17,7 @@ const Header = () => {
                 </div>
                 <div className={"header-right-menu-wrapper basis-2/3"}>
                     <ul className={"header-right-menu flex flex-row-reverse pr-[0.5vw] space-x-[5px]"}>
+                        <li className={"left-menu order-4 px-[5vw] py-[5px] rounded-full shadow-[0_5px_5px_2px_rgba(0,0,0,0.3)]"} id={"left-menu"}><p className={"drop-shadow-[1px_1px_1px_rgba(0,0,0,0.9)] "}><GiHamburgerMenu size={24} className={"hamburger"}/></p></li>
                         <li className={"home order-3 px-[5vw] py-[5px] rounded-full shadow-[0_5px_5px_2px_rgba(0,0,0,0.3)] "}><p className={"drop-shadow-[1px_1px_1px_rgba(0,0,0,0.9)] "}>Home</p></li>
                         <li className={"about order-2 px-[5vw] py-[5px] rounded-full shadow-[0_5px_5px_2px_rgba(0,0,0,0.3)]"}>
                             <p className={"drop-shadow-[1px_1px_1px_rgba(0,0,0,0.9)]"}>About</p></li>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Nunito:wght@300;400&family=Roboto&family=Source+Sans+Pro:wght@600&family=Space+Grotesk:wght@500&display=swap');
 
 #heading {
-    font-family: 'Space Grotesk', "Comic Sans MS", "Helvetica Neue",cursive;
+    font-family: 'Space Grotesk', "Comic Sans MS", "Helvetica Neue", cursive;
 }
 
 #subHeading {
@@ -10,18 +10,18 @@
 }
 
 #pContent {
-    font-family: 'Nunito',cursive;
+    font-family: 'Nunito', cursive;
 }
 
 .sProjIcon {
     color: white;
 }
 
-.about, .home, .contact {
+.about, .home, .contact, .left-menu {
     border: 1px outset rgba(8, 139, 213, 0.5);
 }
 
-.about:hover, .home:hover, .contact:hover {
+.about:hover, .home:hover, .contact:hover, .left-menu:hover {
     /* From https://css.glass */
     background: #D5BFA5;
     border-radius: 16px;
@@ -32,6 +32,10 @@
     text-shadow: 1px 1px #6e6d6d;
 }
 
+.left-menu {
+    display: none;
+}
+
 .smallProjects-item {
     border: 1px outset rgba(8, 139, 213, 0.5);
     box-shadow: 1px 1px 10px rgba(30, 29, 29, 0.4);
@@ -40,4 +44,60 @@
 .smallProjects-item:hover {
     border: 1px outset rgba(8, 139, 213, 0.5);
     box-shadow: 2px 2px 20px rgba(30, 29, 29, 0.88);
+}
+
+.footer {
+    max-width: 80vw;
+}
+
+@media (max-width: 640px) or (max-height: 700px) {
+    .header-left-logo-wrapper {
+        display: none;
+    }
+
+    .header-right-menu-wrapper {
+        flex-basis: fit-content;
+        flex-grow: 1;
+    }
+
+    .header-right-menu {
+        margin: 0 auto;
+        justify-content: space-around;
+
+    }
+
+    .header-right-menu li {
+        flex-basis: 20%;
+    }
+
+    .header-right-menu li p {
+        text-align: center;
+    }
+
+    .footer {
+        position: relative;
+        margin: 0 auto;
+        max-width: 100vw;
+    }
+
+    .container-wrapper {
+        overflow-block: scroll;
+    }
+
+    .smallProjects {
+        display: none;
+    }
+
+    .header-right-menu #left-menu {
+        display: inline;
+        text-align: center;
+        justify-content: center;
+        align-self: center;
+
+    }
+
+    .hamburger {
+        margin: 0 auto;
+    }
+
 }
