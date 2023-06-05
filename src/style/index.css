@@ -59,6 +59,9 @@
         display: none;
     }
 
+    .header-left-logo-wrapper {
+        display: none;
+    }
 
     .smallProjects {
         display: none !important;
