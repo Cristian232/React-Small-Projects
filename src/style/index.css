@@ -84,7 +84,7 @@
         overflow-block: scroll;
     }
 
-    .smallProjects {
+    .smallProjectsCacheCssTest {
         display: none;
     }
 
@@ -100,4 +100,21 @@
         margin: 0 auto;
     }
 
+    .content {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .content-main-container {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    @media (max-width: 425px) {
+        #heading {
+            display: block;
+            margin: 0 auto;
+        }
+
+    }
 }
