@@ -9,7 +9,7 @@ import {BsCloudLightningRainFill} from "react-icons/bs";
 const SmallProjects = () => {
     return (
         <div
-            className={"smallProjects smallProjectsCacheCssTest w-[75px] ml-[0.5vw] mx-[auto] h-[92vh] flex items-center justify-items-center row-span-1"}>
+            className={"smallProjects smallProjectsCacheCssTest w-[75px] ml-[0.5vw] mx-[auto] h-[92vh] flex items-center justify-items-center row-span-1"} id={"smallProjectsId"}>
             <div className={"smallProjects-wrapper w-[80%] mx-[auto]"}>
                 <ul className={"smallProjects-list flex-col space-y-5  "}>
                     <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
