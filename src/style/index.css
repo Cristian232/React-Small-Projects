@@ -55,6 +55,14 @@
         display: none;
     }
 
+    .smallProjects {
+        display: none !important;
+    }
+
+    .App .container-wrapper .smallProjects {
+        display: none !important;
+    }
+
     .header-right-menu-wrapper {
         flex-basis: fit-content;
         flex-grow: 1;
@@ -84,10 +92,6 @@
         overflow-block: scroll;
     }
 
-    .smallProjectsCacheCssTest {
-        display: none;
-    }
-
     .header-right-menu #left-menu {
         display: inline;
         text-align: center;
@@ -114,7 +118,6 @@
         #heading {
             display: block;
             margin: 0 auto;
-            background-color: #D5BFA5;
         }
 
     }
