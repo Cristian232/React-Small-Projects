@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 function App() {
     return (
-        <div className="App grid grid-rows-2 grid-rows-[8vh_92vh]" style={{
+        <div className="App grid grid-rows-3 grid-rows-[8vh_auto_auto]" style={{
             backgroundImage: `url(${background})`,
             minHeight: "100vh",
             backgroundSize: "cover",

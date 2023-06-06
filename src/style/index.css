@@ -58,10 +58,12 @@
     }
 
     .smallProjects {
+        height: auto;
         display: none !important;
     }
 
     .App .container-wrapper .smallProjects {
+        height: auto;
         display: none !important;
     }
 
@@ -85,9 +87,9 @@
     }
 
     .footer {
-        position: relative;
+        position: static;
         margin: 0 auto;
-        max-width: 100vw;
+        max-width: 90vw;
     }
 
     .header-right-menu #left-menu {
@@ -105,11 +107,13 @@
     .content {
         display: block;
         margin: 0 auto;
+        height: auto;
     }
 
     .content-main-container {
         margin: 0 auto;
         text-align: center;
+        height: auto;
     }
 
     @media (max-width: 425px) {
