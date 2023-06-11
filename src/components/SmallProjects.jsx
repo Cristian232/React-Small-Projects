@@ -1,41 +1,53 @@
-import {
-    GiAngelOutfit,
-    GiBellShield,
-    GiBloodySword, GiDeathStar, GiDonerKebab, GiGoat
-} from "react-icons/gi";
-import {SiStartrek} from "react-icons/si";
-import {BsCloudLightningRainFill} from "react-icons/bs";
 
-const SmallProjects = () => {
+import WeatherApp from "./smallProjectsComp/WeatherApp";
+import {useEffect, useState} from "react";
+import IpGeoApp from "./smallProjectsComp/IpGeoApp";
+import PeopleInSpaceApp from "./smallProjectsComp/PeopleInSpaceApp";
+import HoroscopeApp from "./smallProjectsComp/HoroscopeApp";
+import MovieApiApp from "./smallProjectsComp/MovieApiApp";
+import ChuckNorrisFactsApp from "./smallProjectsComp/ChuckNorrisFactsApp";
+import CoffeeImgApp from "./smallProjectsComp/CoffeeImgApp";
+import CatApiApp from "./smallProjectsComp/CatApiApp";
+
+
+
+const SmallProjects = ({spList}) => {
+
+    let [smallProjectList, setSmallProjectList] = useState([]);
+
+    useEffect(() => {
+        console.log(smallProjectList.length)
+        console.log("Updated on use effect from smallProjects")
+    },[smallProjectList])
+
     return (
         <div
             className={"smallProjects smallProjectsCacheCssTest w-[75px] ml-[0.5vw] mx-[auto] h-[92vh] flex items-center justify-items-center row-span-1"} id={"smallProjectsId"}>
             <div className={"smallProjects-wrapper w-[80%] mx-[auto]"}>
                 <ul className={"smallProjects-list flex-col space-y-5  "}>
                     <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <BsCloudLightningRainFill size={40}
-                                                  className={"mx-[auto] sProjIcon"}/>
+                        <WeatherApp setProjects={setSmallProjectList}/>
                     </li>
                     <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <GiAngelOutfit size={40}
-                                       className={"mx-[auto] sProjIcon"}/></li>
+                        <IpGeoApp setProjects={setSmallProjectList}/>
+                    </li>
                     <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <SiStartrek size={40}
-                                    className={"mx-[auto] sProjIcon"}/></li>
+                        <PeopleInSpaceApp setProjects={setSmallProjectList}/>
+                    </li>
                     <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <GiDonerKebab size={40}
-                                      className={"mx-[auto] sProjIcon"}/></li>
+                        <CatApiApp setProjects={setSmallProjectList}/>
+                    </li>
                     <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <GiBellShield size={40}
-                                      className={"mx-[auto] sProjIcon"}/></li>
+                        <CoffeeImgApp setProjects={setSmallProjectList}/>
+                    </li>
                     <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <GiBloodySword size={40}
-                                       className={"mx-[auto] sProjIcon"}/></li>
+                        <ChuckNorrisFactsApp setProjects={setSmallProjectList}/>
+                    </li>
                     <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <GiDeathStar size={40}
-                                     className={"mx-[auto] sProjIcon"}/></li>
+                        <MovieApiApp setProjects={setSmallProjectList}/>
+                    </li>
                     <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <GiGoat size={40} className={"mx-[auto] sProjIcon"}/>
+                        <HoroscopeApp setProjects={setSmallProjectList}/>
                     </li>
                 </ul>
             </div>
