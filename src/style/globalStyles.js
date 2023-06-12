@@ -7,7 +7,8 @@ const GlobalStyle = createGlobalStyle`
 
   ${reset}
   body {
-    background-color: #10bec4;
+    background: rgb(51,50,55);
+    background: linear-gradient(0deg, rgba(51,50,55,1) 20%, rgba(52,57,63,1) 55%, rgba(49,56,62,1) 90%);
   }
 
   h1, #heading {
@@ -30,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 
   @media screen and ${devices["3xs"]} {
     body {
-      background-color: #838288;
+      background: rgb(51,50,55);
       background-image: url(${backGroundImg});
       background-size: cover;
       background-position: -565px;
@@ -41,13 +42,19 @@ const GlobalStyle = createGlobalStyle`
 
   @media screen and ${devices.xs} {
     body {
-        background-position: -400px;
+        background-position: -30vw;
     }
   }
 
   @media screen and ${devices.sm} {
     body {
       background-position: -200px;
+    }
+  } 
+  
+  @media screen and ${devices.md} {
+    body {
+      background-position: 0;
     }
   }
 

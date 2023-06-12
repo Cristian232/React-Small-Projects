@@ -11,13 +11,14 @@ import CatApiApp from "./smallProjectsComp/CatApiApp";
 
 
 
-const SmallProjects = ({spList}) => {
+const SmallProjects = ({smallProjectsList : spList, setSmallProjectsList : setSpList }) => {
 
     let [smallProjectList, setSmallProjectList] = useState([]);
 
     useEffect(() => {
         console.log(smallProjectList.length)
         console.log("Updated on use effect from smallProjects")
+        setSpList(...spList, smallProjectList)
     },[smallProjectList])
 
     return (

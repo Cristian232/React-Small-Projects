@@ -10,12 +10,17 @@ import About from "./components/About";
 import Contact from "./components/smallProjectsComp/Contact";
 import GlobalStyle from "./style/globalStyles";
 import styled from "styled-components";
+import devices from "./style/breakpoints";
 
 const StyledApp = styled.div`
 
 display: grid;
-grid-template-rows: clamp(50px , 5vh , 150px) auto auto;
+grid-template-rows: 50px auto auto;
 
+  @media screen and  ${devices.sm} and ${devices.hr} {
+    grid-template-rows: 75px auto auto;
+  }
+  
 `;
 
 
@@ -41,10 +46,10 @@ function App() {
             backgroundSize: "cover",
             backgroundPosition: "center"
         }} */>
-            <Header/>
+            <Header spList = {smallProjectsList}/>
             <div className={" "/*"container-wrapper flex"*/}>
                 <SmallProjects
-                    spList = {smallProjectsList}/>
+                    smallProjectsList ={smallProjectsList} setSmallProjectsList={ setSmallProjectsList}/>
                 <Content/>
             </div>
             <Footer/>

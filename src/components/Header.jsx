@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {Styledcomponents} from "@styled-icons/simple-icons/Styledcomponents";
 import {ReactLogo as Reactlogo} from "@styled-icons/simple-icons/ReactLogo";
 import {Menu as Hamburgermenu} from "@styled-icons/entypo/Menu";
@@ -20,9 +20,7 @@ const HamburgerMenu = styled(Hamburgermenu)`
 `;
 
 const StyledHeader = styled.div`
-
-  align-items: center;
-  display: grid;
+  align-self: center;
 
   .header-wrapper {
     .header-left-logo-wrapper {
@@ -66,7 +64,7 @@ const StyledHeader = styled.div`
 
   .dropDown {
     color: greenyellow;
-    z-index: 1;
+    display: none;
   }
 
   .dropDown li {
@@ -83,40 +81,87 @@ const StyledHeader = styled.div`
   }
 
   .dropDown-content {
-    display: none;
+    display: block;
+    z-index: 1;
+    position: relative;
   }
 
   @media screen and ${devices.xs} {
     .dropDown {
       width: 60vw;
     }
+
     .dropDown li {
       padding: 3vh 6vw;
     }
-    
-
   }
 
   @media screen and  ${devices.sm} and ${devices.hr} {
+    .left-menu {
+      display: none;
+    }
 
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .header-left-logo-wrapper {
+        display: flex;
+        align-items: center;
+        padding: 5px 15vw;
+      }
+
+      .header-right-menu-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-grow: 0.5;
+        padding: 0 25px;
+
+        .header-right-menu {
+          flex-grow: 1;
+        }
+
+        .header-right-menu li {
+          padding: 10px 10px;
+          margin: 0 3px;
+          border-radius: 20px;
+          border: 1px outset rgba(8, 139, 213, 0.5);
+          box-shadow: 1px 1px 10px rgba(30, 29, 29, 0.4);
+        }
+
+        .header-right-menu li:hover {
+          color: #f9f9f9;
+          text-shadow: 1px 1px 1px #000000;
+          background-image: linear-gradient(65deg,
+          hsl(31deg 31% 61%) 0%,
+          hsl(32deg 43% 78%) 60%,
+          hsl(31deg 56% 84%) 81%,
+          hsl(40deg 39% 88%) 92%,
+          hsl(176deg 80% 92%) 100%);
+        }
+      }
+    }
   }
-  
-
 `;
 
 
-const Header = () => {
+const Header = ({spList}) => {
     const [state, setState] = useState([]);
     const [selected, setSelected] = useState(false);
+    let smallProjectsListBuilder = " ";
 
     function dropDownHandler() {
+        // smallProjectsListBuilder = spList.map(i =>
+        //     <li>i.name</li>
+        // )
         setSelected(!selected);
-        console.log("clicked")
+        console.log("here || " + smallProjectsListBuilder + " |||||| " + spList);
+        console.log("new line ")
+
     }
 
 
-    return (
-        <StyledHeader
+    return (<StyledHeader
             className={"header"}>
             <div
                 className={"header-wrapper"}>
@@ -147,9 +192,7 @@ const Header = () => {
                 </div>
             </div>
             <ul className={`dropDown ${selected ? "dropDown-content" : ""}`}>
-                <li>home</li>
-                <li>home2</li>
-                <li>home3</li>
+                {smallProjectsListBuilder}
             </ul>
         </StyledHeader>
 
