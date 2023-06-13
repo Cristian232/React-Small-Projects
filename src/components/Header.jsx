@@ -75,11 +75,7 @@ const StyledHeader = styled.div`
     font-family: 'Roboto', cursive;
     font-size: 10px;
   }
-
-  .dropDown li:hover {
-    color: cornflowerblue;
-  }
-
+  
   .dropDown-content {
     display: block;
     z-index: 1;
@@ -123,10 +119,11 @@ const StyledHeader = styled.div`
 
         .header-right-menu li {
           padding: 10px 10px;
+          text-shadow: 2px 1px 3px black;
           margin: 0 3px;
           border-radius: 20px;
           border: 1px outset rgba(8, 139, 213, 0.5);
-          box-shadow: 1px 1px 10px rgba(30, 29, 29, 0.4);
+          box-shadow: 2px 5px 15px rgb(30 29 29);
         }
 
         .header-right-menu li:hover {

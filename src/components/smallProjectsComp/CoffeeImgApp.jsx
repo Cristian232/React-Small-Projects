@@ -2,7 +2,7 @@
 import {useEffect} from "react";
 import {BiCoffeeTogo} from "react-icons/bi";
 
-const CoffeeImgApp = ({setProjects}) => {
+const CoffeeImgApp = ({setProjects,size}) => {
 
     let name = "Coffee Info"
     let description = "Displays the Coffee info"
@@ -24,7 +24,7 @@ const CoffeeImgApp = ({setProjects}) => {
     }
 
     return(
-    <BiCoffeeTogo size={40}
+    <BiCoffeeTogo size={size}
                               className={"mx-[auto] sProjIcon"}
                               onClick={ appClickHandler }/>
     )

@@ -2,7 +2,7 @@
 import {useEffect} from "react";
 import {GiDeathStar} from "react-icons/gi";
 
-const MovieApiApp = ({setProjects}) => {
+const MovieApiApp = ({setProjects,size}) => {
 
     let name = "MovieApi Info"
     let description = "Displays the Movie info"
@@ -24,7 +24,7 @@ const MovieApiApp = ({setProjects}) => {
     }
 
     return(
-    <GiDeathStar size={40}
+    <GiDeathStar size={size}
                               className={"mx-[auto] sProjIcon"}
                               onClick={ appClickHandler }/>
     )

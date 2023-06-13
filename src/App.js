@@ -11,22 +11,24 @@ import Contact from "./components/smallProjectsComp/Contact";
 import GlobalStyle from "./style/globalStyles";
 import styled from "styled-components";
 import devices from "./style/breakpoints";
+import Container from "./components/Container";
 
 const StyledApp = styled.div`
 
-display: grid;
-grid-template-rows: 50px auto auto;
+  display: grid;
+  grid-template-rows: 50px auto 50px;
+  min-height: 100svh;
 
   @media screen and  ${devices.sm} and ${devices.hr} {
-    grid-template-rows: 75px auto auto;
+    grid-template-rows: 75px auto 75px;
   }
-  
+
 `;
 
 
 function App() {
 
-    const [smallProjectsList,setSmallProjectsList ] = useState([])
+    const [smallProjectsList, setSmallProjectsList] = useState([])
 
     return (
         // <BrowserRouter>
@@ -36,25 +38,17 @@ function App() {
         //         <Route path="contact" /*For Production needs to be the homepage*/ element={<Contact />}/>
         //
         //
-<Fragment>
+        <Fragment>
 
-        <GlobalStyle />
+            <GlobalStyle/>
 
-        <StyledApp className="App"/*grid grid-rows-3 grid-rows-[8vh_auto_auto]" style={{
-            backgroundImage: `url(${background})`,
-            minHeight: "100vh",
-            backgroundSize: "cover",
-            backgroundPosition: "center"
-        }} */>
-            <Header spList = {smallProjectsList}/>
-            <div className={" "/*"container-wrapper flex"*/}>
-                <SmallProjects
-                    smallProjectsList ={smallProjectsList} setSmallProjectsList={ setSmallProjectsList}/>
-                <Content/>
-            </div>
-            <Footer/>
-        </StyledApp>
-</Fragment>
+            <StyledApp className="App">
+                <Header spList={smallProjectsList}/>
+                <Container smallProjectsList={smallProjectsList}
+                           setSmallProjectsList={setSmallProjectsList}/>
+                <Footer/>
+            </StyledApp>
+        </Fragment>
         //         </Routes>
         // </BrowserRouter>
     );

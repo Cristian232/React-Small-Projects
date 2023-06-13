@@ -2,7 +2,7 @@
 import {useEffect} from "react";
 import {GiAngelOutfit, GiGoat} from "react-icons/gi";
 
-const HoroscopeApp = ({setProjects}) => {
+const HoroscopeApp = ({setProjects,size}) => {
 
     let name = "Horoscope Info"
     let description = "Displays the Horoscope info"
@@ -24,7 +24,7 @@ const HoroscopeApp = ({setProjects}) => {
     }
 
     return(
-    <GiAngelOutfit size={40}
+    <GiAngelOutfit size={size}
                               className={"mx-[auto] sProjIcon"}
                               onClick={ appClickHandler }/>
     )

@@ -3,7 +3,7 @@ import {useEffect} from "react";
 import {GiDeathStar} from "react-icons/gi";
 import {SiStartrek} from "react-icons/si";
 
-const PeopleInSpaceApp = ({setProjects}) => {
+const PeopleInSpaceApp = ({setProjects,size}) => {
 
     let name = "PeopleInSpace Info"
     let description = "Displays the PeopleInSpace info"
@@ -26,7 +26,7 @@ const PeopleInSpaceApp = ({setProjects}) => {
     }
 
     return(
-    <SiStartrek size={40}
+    <SiStartrek size={size}
                               className={"mx-[auto] sProjIcon"}
                               onClick={ appClickHandler }/>
     )

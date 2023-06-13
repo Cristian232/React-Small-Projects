@@ -1,7 +1,7 @@
 import {BsCloudLightningRainFill} from "react-icons/bs";
 import {useEffect} from "react";
 
-const WeatherApp = ({setProjects}) => {
+const WeatherApp = ({setProjects, size}) => {
 
     let name = "Weather Info"
     let description = "Displays the weather info"
@@ -23,7 +23,7 @@ const WeatherApp = ({setProjects}) => {
     }
 
     return(
-    <BsCloudLightningRainFill size={40}
+    <BsCloudLightningRainFill size={size}
                               className={"mx-[auto] sProjIcon"}
                               onClick={ appClickHandler }/>
     )

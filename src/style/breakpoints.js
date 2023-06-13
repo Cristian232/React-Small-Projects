@@ -18,7 +18,8 @@ const devices = {
     lg: `(min-width: ${breakpoints.lg})`,
     xl: `(min-width: ${breakpoints.xl})`,
     "2xl": `(min-width: ${breakpoints["2xl"]})`,
-    hr: `(min-height: ${breakpoints.sm})`
+    hr: `(min-height: ${breakpoints.sm})`,
+    minhr: `(min-height: ${breakpoints["3xs"]})`
 }
 
 

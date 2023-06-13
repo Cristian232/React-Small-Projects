@@ -15,17 +15,17 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Space Grotesk', "Comic Sans MS", "Helvetica Neue", cursive;
   }
 
-  h2, #subHeading {
+  h3, #subHeading {
     color: white;
     font-family: 'Roboto', cursive;
   }
 
-  h3, #pContent {
+  p, #pContent {
     font-family: 'Nunito', cursive;
   }
 
   .sProjIcon {
-    color: #a43434;
+    color: white;
   }
 
 
@@ -34,15 +34,16 @@ const GlobalStyle = createGlobalStyle`
       background: rgb(51,50,55);
       background-image: url(${backGroundImg});
       background-size: cover;
-      background-position: -565px;
-      background-repeat: no-repeat;
+      background-position: center center;
+      background-repeat: repeat;
       min-height: 100svh;
     }
+
   }
 
   @media screen and ${devices.xs} {
     body {
-        background-position: -30vw;
+        background-position: center center;
     }
   }
 

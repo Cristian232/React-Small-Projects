@@ -2,7 +2,7 @@
 import {useEffect} from "react";
 import {IoLogoOctocat} from "react-icons/io";
 
-const CurrencyApp = ({setProjects}) => {
+const CurrencyApp = ({setProjects,size}) => {
 
     let name = "Weather Info"
     let description = "Displays the weather info"
@@ -24,7 +24,7 @@ const CurrencyApp = ({setProjects}) => {
     }
 
     return(
-    <IoLogoOctocat size={40}
+    <IoLogoOctocat size={size}
                               className={"mx-[auto] sProjIcon"}
                               onClick={ appClickHandler }/>
     )

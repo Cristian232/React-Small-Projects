@@ -2,7 +2,7 @@
 import {useEffect} from "react";
 import {GiBloodySword, GiGoat} from "react-icons/gi";
 
-const ChuckNorrisFactsApp = ({setProjects}) => {
+const ChuckNorrisFactsApp = ({setProjects,size}) => {
 
     let name = "just Facts Info"
     let description = "Displays the actual facts info"
@@ -24,7 +24,7 @@ const ChuckNorrisFactsApp = ({setProjects}) => {
     }
 
     return(
-    <GiGoat size={40}
+    <GiGoat size={size}
                               className={"mx-[auto] sProjIcon"}
                               onClick={ appClickHandler }/>
     )

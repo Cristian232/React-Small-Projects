@@ -2,7 +2,7 @@
 import {useEffect} from "react";
 import {BsRouterFill} from "react-icons/bs";
 
-const IpGeoApp = ({setProjects}) => {
+const IpGeoApp = ({setProjects,size}) => {
 
     let name = "Ip Info"
     let description = "Displays the Ip info"
@@ -24,7 +24,7 @@ const IpGeoApp = ({setProjects}) => {
     }
 
     return(
-    <BsRouterFill size={40}
+    <BsRouterFill size={size}
                               className={"mx-[auto] sProjIcon"}
                               onClick={ appClickHandler }/>
     )
