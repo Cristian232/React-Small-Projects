@@ -12,6 +12,7 @@ import GlobalStyle from "./style/globalStyles";
 import styled from "styled-components";
 import devices from "./style/breakpoints";
 import Container from "./components/Container";
+import {AppProvider} from "./components/AppContext";
 
 const StyledApp = styled.div`
 
@@ -38,17 +39,19 @@ function App() {
         //         <Route path="contact" /*For Production needs to be the homepage*/ element={<Contact />}/>
         //
         //
-        <Fragment>
+        <AppProvider>
 
-            <GlobalStyle/>
+            <Fragment>
 
-            <StyledApp className="App">
-                <Header spList={smallProjectsList}/>
-                <Container smallProjectsList={smallProjectsList}
-                           setSmallProjectsList={setSmallProjectsList}/>
-                <Footer/>
-            </StyledApp>
-        </Fragment>
+                <GlobalStyle/>
+
+                <StyledApp className="App">
+                    <Header />
+                    <Container />
+                    <Footer/>
+                </StyledApp>
+            </Fragment>
+        </AppProvider>
         //         </Routes>
         // </BrowserRouter>
     );

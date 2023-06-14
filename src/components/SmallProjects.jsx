@@ -1,6 +1,6 @@
 
 import WeatherApp from "./smallProjectsComp/WeatherApp";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import IpGeoApp from "./smallProjectsComp/IpGeoApp";
 import PeopleInSpaceApp from "./smallProjectsComp/PeopleInSpaceApp";
 import HoroscopeApp from "./smallProjectsComp/HoroscopeApp";
@@ -9,6 +9,8 @@ import ChuckNorrisFactsApp from "./smallProjectsComp/ChuckNorrisFactsApp";
 import CoffeeImgApp from "./smallProjectsComp/CoffeeImgApp";
 import CatApiApp from "./smallProjectsComp/CatApiApp";
 import styled from "styled-components";
+import AppContext from "./AppContext";
+import SmallProjectListItems from "./SmallProjectListItems";
 
 const StyledSmallProjects = styled.div`
   
@@ -38,46 +40,22 @@ const StyledSmallProjects = styled.div`
 `;
 
 
-const SmallProjects = ({smallProjectsList : spList, setSmallProjectsList : setSpList }) => {
+const SmallProjects = () => {
 
-    let [smallProjectList, setSmallProjectList] = useState([]);
 
-    useEffect(() => {
-        console.log(smallProjectList.length)
-        console.log("Updated on use effect from smallProjects")
-        setSpList(...spList, smallProjectList)
-    },[smallProjectList])
+    // useEffect(() => {
+    //     console.log(smallProjectList.length)
+    //     console.log("Updated on use effect from smallProjects")
+    //     setSpList(...spList, smallProjectList)
+    // },[smallProjectList])
 
-    let iconSize = 34;
+
     return (
         <StyledSmallProjects
-            className={"smallProjects " /*smallProjectsCacheCssTest w-[75px] ml-[0.5vw] mx-[auto] h-[92vh] flex items-center justify-items-center row-span-1"} id={"smallProjectsId */}>
-            <div className={"smallProjects-wrapper w-[80%] mx-[auto]"}>
-                <ul className={"smallProjects-list flex-col space-y-5  "}>
-                    <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <WeatherApp setProjects={setSmallProjectList} size={iconSize}/>
-                    </li>
-                    <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <IpGeoApp setProjects={setSmallProjectList} size={iconSize}/>
-                    </li>
-                    <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <PeopleInSpaceApp setProjects={setSmallProjectList} size={iconSize}/>
-                    </li>
-                    <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <CatApiApp setProjects={setSmallProjectList} size={iconSize}/>
-                    </li>
-                    <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <CoffeeImgApp setProjects={setSmallProjectList} size={iconSize}/>
-                    </li>
-                    <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <ChuckNorrisFactsApp setProjects={setSmallProjectList} size={iconSize}/>
-                    </li>
-                    <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <MovieApiApp setProjects={setSmallProjectList} size={iconSize}/>
-                    </li>
-                    <li className={"smallProjects-item block p-[5px] py-[10px] flex items-center rounded-[25px]"}>
-                        <HoroscopeApp setProjects={setSmallProjectList} size={iconSize}/>
-                    </li>
+            className={"smallProjects"}>
+            <div className={"smallProjects-wrapper"}>
+                <ul className={"smallProjects-list"}>
+                    <SmallProjectListItems />
                 </ul>
             </div>
         </StyledSmallProjects>

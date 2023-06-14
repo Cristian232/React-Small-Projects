@@ -1,9 +1,10 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {Styledcomponents} from "@styled-icons/simple-icons/Styledcomponents";
 import {ReactLogo as Reactlogo} from "@styled-icons/simple-icons/ReactLogo";
 import {Menu as Hamburgermenu} from "@styled-icons/entypo/Menu";
 import styled from "styled-components";
 import devices from "../style/breakpoints";
+import AppContext from "./AppContext";
 
 const StyledComp = styled(Styledcomponents)`
   color: white;
@@ -68,18 +69,20 @@ const StyledHeader = styled.div`
   }
 
   .dropDown li {
-    padding: 5px 1px;
+    padding: 10px 1px;
     text-align: center;
     background-color: rgb(50 54 60);
-    border-bottom: 2px groove rgba(8, 139, 213, 0.1);
+    border: 2px groove rgba(8, 139, 213, 0.37);
     font-family: 'Roboto', cursive;
     font-size: 10px;
+    border-radius: 5px;
   }
-  
+
   .dropDown-content {
     display: block;
     z-index: 1;
-    position: relative;
+    position: absolute;
+    width: 100%;
   }
 
   @media screen and ${devices.xs} {
@@ -94,6 +97,10 @@ const StyledHeader = styled.div`
 
   @media screen and  ${devices.sm} and ${devices.hr} {
     .left-menu {
+      display: none;
+    }
+
+    .dropDown {
       display: none;
     }
 
@@ -142,21 +149,14 @@ const StyledHeader = styled.div`
 `;
 
 
-const Header = ({spList}) => {
-    const [state, setState] = useState([]);
+const Header = () => {
+
     const [selected, setSelected] = useState(false);
-    let smallProjectsListBuilder = " ";
+    const {items,setItems} = useContext(AppContext);
 
     function dropDownHandler() {
-        // smallProjectsListBuilder = spList.map(i =>
-        //     <li>i.name</li>
-        // )
         setSelected(!selected);
-        console.log("here || " + smallProjectsListBuilder + " |||||| " + spList);
-        console.log("new line ")
-
     }
-
 
     return (<StyledHeader
             className={"header"}>
@@ -189,10 +189,11 @@ const Header = ({spList}) => {
                 </div>
             </div>
             <ul className={`dropDown ${selected ? "dropDown-content" : ""}`}>
-                {smallProjectsListBuilder}
+                {items.map(i =>
+                    <li key={i[0]}>{i[0]}</li>
+                )}
             </ul>
         </StyledHeader>
-
     );
 };
 

@@ -30,8 +30,7 @@ const Container = ({smallProjectsList,setSmallProjectsList}) => {
     return (
         <StyledContainer>
             <StyledSmallProject>
-            <SmallProjects
-                smallProjectsList ={smallProjectsList} setSmallProjectsList={setSmallProjectsList}/>
+            <SmallProjects/>
             </StyledSmallProject>
                 <Content/>
         </StyledContainer>

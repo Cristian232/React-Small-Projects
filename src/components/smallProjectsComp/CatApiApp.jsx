@@ -2,9 +2,9 @@
 import {useEffect} from "react";
 import {IoLogoOctocat} from "react-icons/io";
 
-const CurrencyApp = ({setProjects,size}) => {
+const CatApiApp = ({setProjects,size}) => {
 
-    let name = "Weather Info"
+    let name = "CatApi Info"
     let description = "Displays the weather info"
     let contentLine1 = "Nothing"
     let contentLine2 = "Nothing"
@@ -31,4 +31,4 @@ const CurrencyApp = ({setProjects,size}) => {
 
 };
 
-export default CurrencyApp;
+export default CatApiApp;
