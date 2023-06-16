@@ -1,8 +1,8 @@
-
 import {useEffect} from "react";
-import {GiBloodySword, GiGoat} from "react-icons/gi";
+import {GiGoat} from "react-icons/gi";
+import {Link} from "react-router-dom";
 
-const ChuckNorrisFactsApp = ({setProjects,size}) => {
+const ChuckNorrisFactsApp = ({setProjects, size}) => {
 
     let name = "just Facts Info"
     let description = "Displays the actual facts info"
@@ -10,23 +10,24 @@ const ChuckNorrisFactsApp = ({setProjects,size}) => {
     let contentLine2 = "Nothing"
     let contentLine3 = "Nothing"
     let contentLine4 = "Nothing"
+    let link = "/chucknorrisfacts"
 
-    let justFacts = [name, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let justFacts = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
 
     useEffect(() => {
-         setProjects(smallProjectList => [...smallProjectList, justFacts]);
-        console.log("Fired once from ChuckNorrisFacts")
-    },[])
+        setProjects(smallProjectList => [...smallProjectList, justFacts]);
+    }, [])
 
 
     function appClickHandler(nameApp) {
-        console.log("Clicked on ChuckNorrisFactsApp")
     }
 
-    return(
-    <GiGoat size={size}
-                              className={"mx-[auto] sProjIcon"}
-                              onClick={ appClickHandler }/>
+    return (
+        <Link to={link}>
+            <GiGoat size={size}
+                    className={"sProjIcon"}
+                    onClick={appClickHandler}/>
+        </Link>
     )
 
 };

@@ -23,9 +23,10 @@ const GlobalStyle = createGlobalStyle`
   p, #pContent {
     font-family: 'Nunito', cursive;
   }
-
-  .sProjIcon {
+  
+  a {
     color: white;
+    text-decoration: none;
   }
 
 
@@ -49,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
 
   @media screen and ${devices.sm} {
     body {
-      background-position: -200px;
+      background-position: center;
     }
   } 
   

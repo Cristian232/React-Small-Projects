@@ -1,8 +1,8 @@
-
 import {useEffect} from "react";
 import {GiDeathStar} from "react-icons/gi";
+import {Link} from "react-router-dom";
 
-const MovieApiApp = ({setProjects,size}) => {
+const MovieApiApp = ({setProjects, size}) => {
 
     let name = "MovieApi Info"
     let description = "Displays the Movie info"
@@ -10,23 +10,24 @@ const MovieApiApp = ({setProjects,size}) => {
     let contentLine2 = "Nothing"
     let contentLine3 = "Nothing"
     let contentLine4 = "Nothing"
+    let link = "/movie"
 
-    let weather = [name, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let weather = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
 
     useEffect(() => {
-         setProjects(smallProjectList => [...smallProjectList, weather]);
-        console.log("Fired once from MovieApiApp")
-    },[])
+        setProjects(smallProjectList => [...smallProjectList, weather]);
+    }, [])
 
 
     function appClickHandler(nameApp) {
-        console.log("Clicked on movie")
     }
 
-    return(
-    <GiDeathStar size={size}
-                              className={"mx-[auto] sProjIcon"}
-                              onClick={ appClickHandler }/>
+    return (
+        <Link to={link}>
+            <GiDeathStar size={size}
+                         className={"sProjIcon"}
+                         onClick={appClickHandler}/>
+        </Link>
     )
 
 };

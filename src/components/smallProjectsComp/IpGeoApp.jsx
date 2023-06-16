@@ -1,8 +1,8 @@
-
 import {useEffect} from "react";
 import {BsRouterFill} from "react-icons/bs";
+import {Link} from "react-router-dom";
 
-const IpGeoApp = ({setProjects,size}) => {
+const IpGeoApp = ({setProjects, size}) => {
 
     let name = "Ip Info"
     let description = "Displays the Ip info"
@@ -10,23 +10,24 @@ const IpGeoApp = ({setProjects,size}) => {
     let contentLine2 = "Nothing"
     let contentLine3 = "Nothing"
     let contentLine4 = "Nothing"
+    let link = "/ip"
 
-    let ipGeo = [name, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let ipGeo = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
 
     useEffect(() => {
-         setProjects(smallProjectList => [...smallProjectList, ipGeo]);
-        console.log("Fired once from ip on window load")
-    },[])
+        setProjects(smallProjectList => [...smallProjectList, ipGeo]);
+    }, [])
 
 
     function appClickHandler(nameApp) {
-        console.log("Clicked on Ip")
     }
 
-    return(
-    <BsRouterFill size={size}
-                              className={"mx-[auto] sProjIcon"}
-                              onClick={ appClickHandler }/>
+    return (
+        <Link to={link}>
+            <BsRouterFill size={size}
+                          className={"sProjIcon"}
+                          onClick={appClickHandler}/>
+        </Link>
     )
 
 };

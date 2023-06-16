@@ -1,8 +1,8 @@
-
 import {useEffect} from "react";
 import {BiCoffeeTogo} from "react-icons/bi";
+import {Link} from "react-router-dom";
 
-const CoffeeImgApp = ({setProjects,size}) => {
+const CoffeeImgApp = ({setProjects, size}) => {
 
     let name = "Coffee Info"
     let description = "Displays the Coffee info"
@@ -10,23 +10,24 @@ const CoffeeImgApp = ({setProjects,size}) => {
     let contentLine2 = "Nothing"
     let contentLine3 = "Nothing"
     let contentLine4 = "Nothing"
+    let link = "/coffee"
 
-    let coffee = [name, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let coffee = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
 
     useEffect(() => {
-         setProjects(smallProjectList => [...smallProjectList, coffee]);
-        console.log("Fired once from CoffeeImgApp")
-    },[])
+        setProjects(smallProjectList => [...smallProjectList, coffee]);
+    }, [])
 
 
     function appClickHandler(nameApp) {
-        console.log("Clicked on CoffeeImg")
     }
 
-    return(
-    <BiCoffeeTogo size={size}
-                              className={"mx-[auto] sProjIcon"}
-                              onClick={ appClickHandler }/>
+    return (
+        <Link to={link}>
+            <BiCoffeeTogo size={size}
+                          className={"sProjIcon"}
+                          onClick={appClickHandler}/>
+        </Link>
     )
 
 };

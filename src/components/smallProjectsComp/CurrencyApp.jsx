@@ -1,5 +1,6 @@
-
 import {useEffect} from "react";
+import {BsCloudLightningRainFill} from "react-icons/bs";
+import {Link} from "react-router-dom";
 
 const CurrencyApp = ({setProjects}) => {
 
@@ -9,23 +10,24 @@ const CurrencyApp = ({setProjects}) => {
     let contentLine2 = "Nothing"
     let contentLine3 = "Nothing"
     let contentLine4 = "Nothing"
+    let link = "/currency"
 
-    let weather = [name, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let weather = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
 
     useEffect(() => {
-         setProjects(smallProjectList => [...smallProjectList, weather]);
-        console.log("Fired once")
-    },[])
+        setProjects(smallProjectList => [...smallProjectList, weather]);
+    }, [])
 
 
     function appClickHandler(nameApp) {
-        console.log("Clicked on weather")
     }
 
-    return(
-    <BsCloudLightningRainFill size={40}
-                              className={"mx-[auto] sProjIcon"}
-                              onClick={ appClickHandler }/>
+    return (
+        <Link to={link}>
+            <BsCloudLightningRainFill size={40}
+                                      className={"sProjIcon"}
+                                      onClick={appClickHandler}/>
+        </Link>
     )
 
 };

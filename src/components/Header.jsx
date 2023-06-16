@@ -5,6 +5,7 @@ import {Menu as Hamburgermenu} from "@styled-icons/entypo/Menu";
 import styled from "styled-components";
 import devices from "../style/breakpoints";
 import AppContext from "./AppContext";
+import {Link} from "react-router-dom";
 
 const StyledComp = styled(Styledcomponents)`
   color: white;
@@ -40,7 +41,7 @@ const StyledHeader = styled.div`
     border-radius: 3px;
     border-bottom: 2px groove rgba(8, 139, 213, 0.1);
     text-shadow: 1px 1px #6e6d6d;
-    padding: 16px 10px;
+    //padding: 16px 10px;
   }
 
   .left-menu {
@@ -49,9 +50,11 @@ const StyledHeader = styled.div`
     border-radius: 3px;
     border-bottom: 2px groove rgba(8, 139, 213, 0.1);
     text-shadow: 1px 1px #6e6d6d;
+    text-align: center;
   }
 
-  .header-right-menu li p {
+  .header-right-menu li a p {
+    padding: 16px 10px;
     text-align: center;
     font-family: 'Space Grotesk', "Comic Sans MS", "Helvetica Neue", cursive;
   }
@@ -69,13 +72,16 @@ const StyledHeader = styled.div`
   }
 
   .dropDown li {
-    padding: 10px 1px;
     text-align: center;
     background-color: rgb(50 54 60);
     border: 2px groove rgba(8, 139, 213, 0.37);
     font-family: 'Roboto', cursive;
     font-size: 10px;
     border-radius: 5px;
+  }
+  
+  .dropDown li a {
+    padding: 5px 10px;
   }
 
   .dropDown-content {
@@ -87,11 +93,11 @@ const StyledHeader = styled.div`
 
   @media screen and ${devices.xs} {
     .dropDown {
-      width: 60vw;
+      width: 30vw;
     }
 
-    .dropDown li {
-      padding: 3vh 6vw;
+    .dropDown li a{
+      padding: 5px 10px;
     }
   }
 
@@ -125,7 +131,6 @@ const StyledHeader = styled.div`
         }
 
         .header-right-menu li {
-          padding: 10px 10px;
           text-shadow: 2px 1px 3px black;
           margin: 0 3px;
           border-radius: 20px;
@@ -142,6 +147,12 @@ const StyledHeader = styled.div`
           hsl(31deg 56% 84%) 81%,
           hsl(40deg 39% 88%) 92%,
           hsl(176deg 80% 92%) 100%);
+        }
+
+        .header-right-menu li a p {
+          padding: 10px 10px;
+          text-align: center;
+          font-family: 'Space Grotesk', "Comic Sans MS", "Helvetica Neue", cursive;
         }
       }
     }
@@ -177,21 +188,27 @@ const Header = () => {
                             <HamburgerMenu className={"hamburger"}/>
                         </p></li>
                         <li className={"home"}>
+                            <Link to={"/"}>
                             <p>Home</p>
+                            </Link>
                         </li>
                         <li className={"about"}>
+                            <Link to={"/about"}>
                             <p>About</p>
+                            </Link>
                         </li>
                         <li className={"contact"}>
+                            <Link to={"/contact"}>
                             <p>Contact</p>
+                            </Link>
                         </li>
                     </ul>
                 </div>
             </div>
             <ul className={`dropDown ${selected ? "dropDown-content" : ""}`}>
-                {items.map(i =>
-                    <li key={i[0]}>{i[0]}</li>
-                )}
+                { items.map(i =>
+                <li key={i[0]}><Link to={i[1]}><p>{i[0]}</p></Link></li>
+            ) }
             </ul>
         </StyledHeader>
     );

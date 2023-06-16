@@ -1,5 +1,6 @@
-
 import {useEffect} from "react";
+import {Link} from "react-router-dom";
+import {BsCloudLightningRainFill} from "react-icons/bs";
 
 const TechyPhraseApp = ({setProjects}) => {
 
@@ -9,23 +10,24 @@ const TechyPhraseApp = ({setProjects}) => {
     let contentLine2 = "Nothing"
     let contentLine3 = "Nothing"
     let contentLine4 = "Nothing"
-y
-    let techy = [name, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let link = "/techy"
+
+    let techy = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
 
     useEffect(() => {
-         setProjects(smallProjectList => [...smallProjectList, techy]);
-        console.log("Fired once from Techy Phrase")
-    },[])
+        setProjects(smallProjectList => [...smallProjectList, techy]);
+    }, [])
 
 
     function appClickHandler(nameApp) {
-        console.log("Clicked on TechyPhraseApp")
     }
 
-    return(
-    <BsCloudLightningRainFill size={40}
-                              className={"mx-[auto] sProjIcon"}
-                              onClick={ appClickHandler }/>
+    return (
+        <Link to={link}>
+            <BsCloudLightningRainFill size={40}
+                                      className={"mx-[auto] sProjIcon"}
+                                      onClick={appClickHandler}/>
+        </Link>
     )
 
 };

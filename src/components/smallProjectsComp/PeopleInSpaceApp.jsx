@@ -1,9 +1,8 @@
-
 import {useEffect} from "react";
-import {GiDeathStar} from "react-icons/gi";
 import {SiStartrek} from "react-icons/si";
+import {Link} from "react-router-dom";
 
-const PeopleInSpaceApp = ({setProjects,size}) => {
+const PeopleInSpaceApp = ({setProjects, size}) => {
 
     let name = "PeopleInSpace Info"
     let description = "Displays the PeopleInSpace info"
@@ -11,24 +10,24 @@ const PeopleInSpaceApp = ({setProjects,size}) => {
     let contentLine2 = "Nothing"
     let contentLine3 = "Nothing"
     let contentLine4 = "Nothing"
+    let link = "/ppl-in-space"
 
-    let peopleInSpace = [name, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let peopleInSpace = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
 
     useEffect(() => {
-         setProjects(smallProjectList => [...smallProjectList, peopleInSpace]);
-        console.log("Fired once from PeopleInSpaceApp on window load")
-    },[])
-
+        setProjects(smallProjectList => [...smallProjectList, peopleInSpace]);
+    }, [])
 
 
     function appClickHandler(nameApp) {
-        console.log("Clicked on PeopleInSpaceApp ")
     }
 
-    return(
-    <SiStartrek size={size}
-                              className={"mx-[auto] sProjIcon"}
-                              onClick={ appClickHandler }/>
+    return (
+        <Link to={link}>
+            <SiStartrek size={size}
+                        className={"sProjIcon"}
+                        onClick={appClickHandler}/>
+        </Link>
     )
 
 };

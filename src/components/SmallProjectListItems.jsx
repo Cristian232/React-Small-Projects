@@ -8,40 +8,47 @@ import MovieApiApp from "./smallProjectsComp/MovieApiApp";
 import HoroscopeApp from "./smallProjectsComp/HoroscopeApp";
 import {useContext} from "react";
 import AppContext from "./AppContext";
+import {Link} from "react-router-dom";
 
 const SmallProjectListItems = () => {
 
-    const {setItems : setSmallProjectList} = useContext(AppContext)
+    const {setItems: setSmallProjectList} = useContext(AppContext)
     let iconSize = 34;
 
-    return (
-        <>
-            <li className={"smallProjects-item"}>
-                <WeatherApp setProjects={setSmallProjectList} size={iconSize}/>
-            </li>
-            <li className={"smallProjects-item"}>
-                <IpGeoApp setProjects={setSmallProjectList} size={iconSize}/>
-            </li>
-            <li className={"smallProjects-item"}>
-                <PeopleInSpaceApp setProjects={setSmallProjectList} size={iconSize}/>
-            </li>
-            <li className={"smallProjects-item"}>
-                <CatApiApp setProjects={setSmallProjectList} size={iconSize}/>
-            </li>
-            <li className={"smallProjects-item"}>
-                <CoffeeImgApp setProjects={setSmallProjectList} size={iconSize}/>
-            </li>
-            <li className={"smallProjects-item"}>
-                <ChuckNorrisFactsApp setProjects={setSmallProjectList} size={iconSize}/>
-            </li>
-            <li className={"smallProjects-item"}>
-                <MovieApiApp setProjects={setSmallProjectList} size={iconSize}/>
-            </li>
-            <li className={"smallProjects-item"}>
-                <HoroscopeApp setProjects={setSmallProjectList} size={iconSize}/>
-            </li>
-        </>
-    );
+    return (<>
+        <li className={"smallProjects-item"}>
+            <WeatherApp setProjects={setSmallProjectList}
+                        size={iconSize} className={"svgContent"}/>
+        </li>
+        <li className={"smallProjects-item"}>
+            <IpGeoApp setProjects={setSmallProjectList}
+                      size={iconSize}/>
+        </li>
+        <li className={"smallProjects-item"}>
+            <PeopleInSpaceApp setProjects={setSmallProjectList}
+                              size={iconSize}/>
+        </li>
+        <li className={"smallProjects-item"}>
+            <CatApiApp setProjects={setSmallProjectList}
+                       size={iconSize}/>
+        </li>
+        <li className={"smallProjects-item"}>
+            <CoffeeImgApp setProjects={setSmallProjectList}
+                          size={iconSize}/>
+        </li>
+        <li className={"smallProjects-item"}>
+            <ChuckNorrisFactsApp setProjects={setSmallProjectList}
+                                 size={iconSize}/>
+        </li>
+        <li className={"smallProjects-item"}>
+            <MovieApiApp setProjects={setSmallProjectList}
+                         size={iconSize}/>
+        </li>
+        <li className={"smallProjects-item"}>
+            <HoroscopeApp setProjects={setSmallProjectList}
+                          size={iconSize}/>
+        </li>
+    </>);
 };
 
 export default SmallProjectListItems;

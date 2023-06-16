@@ -1,8 +1,8 @@
-
 import {useEffect} from "react";
-import {GiAngelOutfit, GiGoat} from "react-icons/gi";
+import {GiAngelOutfit} from "react-icons/gi";
+import {Link} from "react-router-dom";
 
-const HoroscopeApp = ({setProjects,size}) => {
+const HoroscopeApp = ({setProjects, size}) => {
 
     let name = "Horoscope Info"
     let description = "Displays the Horoscope info"
@@ -10,23 +10,24 @@ const HoroscopeApp = ({setProjects,size}) => {
     let contentLine2 = "Nothing"
     let contentLine3 = "Nothing"
     let contentLine4 = "Nothing"
+    let link = "/horoscope"
 
-    let horoscope = [name, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let horoscope = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
 
     useEffect(() => {
-         setProjects(smallProjectList => [...smallProjectList, horoscope]);
-        console.log("Fired once from HoroscopeApp")
-    },[])
+        setProjects(smallProjectList => [...smallProjectList, horoscope]);
+    }, [])
 
 
     function appClickHandler(nameApp) {
-        console.log("Clicked on HoroscopeApp")
     }
 
-    return(
-    <GiAngelOutfit size={size}
-                              className={"mx-[auto] sProjIcon"}
-                              onClick={ appClickHandler }/>
+    return (
+        <Link to={link}>
+            <GiAngelOutfit size={size}
+                           className={"sProjIcon"}
+                           onClick={appClickHandler}/>
+        </Link>
     )
 
 };

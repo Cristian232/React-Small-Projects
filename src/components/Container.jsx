@@ -2,6 +2,12 @@ import SmallProjects from "./SmallProjects";
 import Content from "./Content";
 import styled from "styled-components";
 import devices from "../style/breakpoints";
+import ContentHome from "./contentComp/contentCompForNavigationButtons/ContentHome";
+import ContentAbout
+    from "./contentComp/contentCompForNavigationButtons/ContentAbout";
+import ContentContact
+    from "./contentComp/contentCompForNavigationButtons/ContentContact";
+import {Outlet, Route, Routes} from "react-router-dom";
 
 const StyledSmallProject = styled.div`
       display: none;
@@ -32,7 +38,7 @@ const Container = ({smallProjectsList,setSmallProjectsList}) => {
             <StyledSmallProject>
             <SmallProjects/>
             </StyledSmallProject>
-                <Content/>
+                <Outlet />
         </StyledContainer>
     );
 };
