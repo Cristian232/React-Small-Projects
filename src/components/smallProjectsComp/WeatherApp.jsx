@@ -28,7 +28,6 @@ const WeatherApp = ({setProjects, size}) => {
             <BsCloudLightningRainFill size={size}
                                       className={"sProjIcon"}
                                       onClick={appClickHandler}/>
-
         </Link>
     )
 

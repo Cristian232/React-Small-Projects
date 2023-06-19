@@ -1,21 +1,24 @@
-import {useEffect} from "react";
-import {Link} from "react-router-dom";
-import {BsCloudLightningRainFill} from "react-icons/bs";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
-const TechyPhraseApp = ({setProjects}) => {
+
+const TechyPhraseApp = () => {
+
+    const [message, setMessage] = useState("");
 
     let name = "Techy Phrase"
     let description = "Displays a Techy Phrase"
-    let contentLine1 = "Nothing"
-    let contentLine2 = "Nothing"
-    let contentLine3 = "Nothing"
-    let contentLine4 = "Nothing"
     let link = "/techy"
 
-    let techy = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let techy = [name, link, description]
+
+
 
     useEffect(() => {
-        setProjects(smallProjectList => [...smallProjectList, techy]);
+
+    axios.get("https://techy-api.vercel.app/api/text")
+        .then(res => setMessage(res.data) )
+        .catch(err => console.log(err))
     }, [])
 
 
@@ -23,11 +26,7 @@ const TechyPhraseApp = ({setProjects}) => {
     }
 
     return (
-        <Link to={link}>
-            <BsCloudLightningRainFill size={40}
-                                      className={"mx-[auto] sProjIcon"}
-                                      onClick={appClickHandler}/>
-        </Link>
+            <p className={"paragraph"}>{message}  | Your techy phrase for today :)</p>
     )
 
 };

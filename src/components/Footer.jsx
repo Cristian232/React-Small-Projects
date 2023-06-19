@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import devices from "../style/breakpoints";
+import TechyPhraseApp from "./smallProjectsComp/TechyPhraseApp";
 
 
 const StyledFooter = styled.div`
@@ -25,8 +26,7 @@ const Footer = () => {
             className={"footer fixed bottom-0 right-0 px-[20px] text-white"}
             id={"footerId"}>
             <div className={"footer-wrapper"}>
-                <p className={"paragraph"}>Footer Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Quod, repellat.</p>
+                <TechyPhraseApp />
             </div>
         </StyledFooter>
     );
