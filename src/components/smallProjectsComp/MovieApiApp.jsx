@@ -6,29 +6,19 @@ const MovieApiApp = ({setProjects, size}) => {
 
     let name = "MovieApi Info"
     let description = "Displays the Movie info"
-    let contentLine1 = "Nothing"
-    let contentLine2 = "Nothing"
-    let contentLine3 = "Nothing"
-    let contentLine4 = "Nothing"
     let link = "/movie"
 
-    let weather = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let weather = {name: name, link: link, description: description}
 
     useEffect(() => {
         setProjects(smallProjectList => [...smallProjectList, weather]);
     }, [])
 
-
-    function appClickHandler(nameApp) {
-    }
-
-    return (
-        <Link to={link}>
-            <GiDeathStar size={size}
-                         className={"sProjIcon"}
-                         onClick={appClickHandler}/>
-        </Link>
-    )
+    return (<Link to={link}>
+        <GiDeathStar size={size}
+                     className={"sProjIcon"}
+        />
+    </Link>)
 
 };
 

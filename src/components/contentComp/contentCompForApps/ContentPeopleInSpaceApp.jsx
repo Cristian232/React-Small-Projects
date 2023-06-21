@@ -8,7 +8,6 @@ const Content = () => {
     const [astrosNamesAndCraft, setAstrosNamesAndCraft] = useState([]);
 
     useEffect(() => {
-
         setAstrosNamesAndCraft([])
         const fetchData = async () => {
             const {data} = await axios.get("http://api.open-notify.org/astros.json");
@@ -22,8 +21,6 @@ const Content = () => {
         fetchData()
     }, [])
 
-
-
     return (<StyledContent className={"content"}>
         <div className={"content-main-container"}>
             <h1 className={"heading"}>
@@ -34,15 +31,11 @@ const Content = () => {
                 currently {numberOfPpl} people out there &#x1F913; and they
                 are:
             </p>
-
-
             {astrosNamesAndCraft.length &&
                 astrosNamesAndCraft.map(({name,craft}) => {
                     return <p className={"pContent"} key={name}>{name} on
                         the {craft}</p>
                 })}
-
-
         </div>
     </StyledContent>);
 };

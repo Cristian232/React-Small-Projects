@@ -6,29 +6,19 @@ const IpGeoApp = ({setProjects, size}) => {
 
     let name = "Ip Info"
     let description = "Displays the Ip info"
-    let contentLine1 = "Nothing"
-    let contentLine2 = "Nothing"
-    let contentLine3 = "Nothing"
-    let contentLine4 = "Nothing"
     let link = "/ip"
 
-    let ipGeo = [name, link, description, contentLine1, contentLine2, contentLine3, contentLine4]
+    let ipGeo = {name: name, link: link, description: description}
 
     useEffect(() => {
         setProjects(smallProjectList => [...smallProjectList, ipGeo]);
     }, [])
 
-
-    function appClickHandler(nameApp) {
-    }
-
-    return (
-        <Link to={link}>
-            <BsRouterFill size={size}
-                          className={"sProjIcon"}
-                          onClick={appClickHandler}/>
-        </Link>
-    )
+    return (<Link to={link}>
+        <BsRouterFill size={size}
+                      className={"sProjIcon"}
+        />
+    </Link>)
 
 };
 

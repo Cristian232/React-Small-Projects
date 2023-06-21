@@ -1,42 +1,6 @@
 import StyledContent from "../../styledComp/StyledContent";
-import styled from "styled-components";
-
-const StyledContentMainContainer = styled.div`
-
-  #heading {
-
-  }
-
-  .spanItalic {
-    color: cornflowerblue;
-    font-style: italic;
-  }
-
-  .spanStrike {
-    text-decoration: line-through;
-
-  }
-
-  .spanBg {
-    padding: 1px 3px;
-    background-color: #6e6d6d;
-    border-radius: 10px;
-    text-shadow: 3px 3px 5px gold;
-    border: 1px solid palevioletred;
-    font-size: 32px;
-  }
-
-  .spanRotate {
-    text-decoration-line: underline;
-    text-decoration-color: #10bec4;
-    text-decoration-style: wavy;
-    text-decoration-thickness: 2px;
-    color: #167353;
-  }
-
-
-
-`;
+import StyledContentMainContainer
+    from "../../styledComp/StyledContentMainContainer";
 
 const Content = () => {
     return (
@@ -47,7 +11,6 @@ const Content = () => {
                 <p className={"pContent"}>If Chuck Norris were to travel to an alternate dimension in which there was another Chuck Norris and they both fought, they would both win.</p>
                 <p className={"pContent"}>There is no chin behind Chuck Norris' beard. There is only another fist.</p>
                 <p className={"pContent"}>Really big fan of Chuck Norris &#x1F600; </p>
-
             </StyledContentMainContainer>
         </StyledContent>
     );

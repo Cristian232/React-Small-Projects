@@ -8,7 +8,6 @@ import MovieApiApp from "./smallProjectsComp/MovieApiApp";
 import HoroscopeApp from "./smallProjectsComp/HoroscopeApp";
 import {useContext} from "react";
 import AppContext from "./AppContext";
-import {Link} from "react-router-dom";
 
 const SmallProjectListItems = () => {
 

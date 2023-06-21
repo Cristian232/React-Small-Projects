@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import {
-    BrowserRouter,
-    createBrowserRouter,
-    RouterProvider
+    createBrowserRouter, RouterProvider
 } from "react-router-dom";
 import ContentContact
     from "./components/contentComp/contentCompForNavigationButtons/ContentContact";
@@ -22,29 +20,31 @@ import ContentIpGeoApp
     from "./components/contentComp/contentCompForApps/ContentIpGeoApp";
 import ContentCoffeeImgApp
     from "./components/contentComp/contentCompForApps/ContentCoffeeImgApp";
+import ContentHoroscopeApp
+    from "./components/contentComp/contentCompForApps/ContentHoroscopeApp";
+import ContentCatApiApp
+    from "./components/contentComp/contentCompForApps/ContentCatApiApp";
+import ContentMovieApiApp
+    from "./components/contentComp/contentCompForApps/ContentMovieApiApp";
 
 const router = createBrowserRouter([
 
-        {
-            element: <App/>,
-            children: [
-                {path: "contact", element: <ContentContact/>},
-                {path: "about", element: <ContentAbout/>},
-                {path: "/", element: <ContentHome/>},
-                {path: "*", element: <ContentHome/>},
-                {path: "weather", element: <ContentWeatherApp/>},
-                {path: "ppl-in-space", element: <ContentPeopleInSpaceApp/>},
-                {path: "chucknorrisfacts", element: <ContentChuckNorrisFactsApp/>},
-                {path: "ip", element: <ContentIpGeoApp/>},
-                {path: "coffee", element: <ContentCoffeeImgApp/>}
-            ]
-        }
-    ]
-)
+    {   path:"http://Cristian232.github.io/React-Small-Projects",
+        element: <App/>,
+        children: [
+            {path: "contact", element: <ContentContact/>},
+            {path: "about", element: <ContentAbout/>},
+            {path: "/", element: <ContentHome/>},
+            {path: "*", element: <ContentHome/>},
+            {path: "weather", element: <ContentWeatherApp/>},
+            {path: "ppl-in-space", element: <ContentPeopleInSpaceApp/>},
+            {path: "chucknorrisfacts", element: <ContentChuckNorrisFactsApp/>},
+            {path: "ip", element: <ContentIpGeoApp/>},
+            {path: "coffee", element: <ContentCoffeeImgApp/>},
+            {path: "horoscope", element: <ContentHoroscopeApp/>},
+            {path: "cat", element: <ContentCatApiApp/>},
+            {path: "movie", element: <ContentMovieApiApp/>}]
+    }])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-
-    <RouterProvider router={router}/>
-
-);
+root.render(<RouterProvider router={router}/>);

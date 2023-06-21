@@ -25,13 +25,10 @@ const Content = () => {
 
     return (<StyledContent className={"content"}>
         <div className={"content-main-container"}>
-
             <h1 className={"heading"}>Just facts! </h1>
-
             {facts.length && facts.map(fact => {
                 return <h3 className={"subHeading"} key={fact}>{fact}</h3>
             })}
-
         </div>
     </StyledContent>);
 };

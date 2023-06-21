@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JetClientState">
+    <option name="draftsState">
+      <draftsState>
+        <option name="requests">
+          <list>
+            <requestState>
+              <option name="id" value="2e974675-28e8-4c39-919d-5911f9e1da2e" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://google.ro" />
+            </requestState>
+          </list>
+        </option>
+      </draftsState>
+    </option>
+    <option name="environmentGroups">
+      <list>
+        <environmentGroupState>
+          <option name="environments">
+            <list>
+              <environmentState>
+                <option name="id" value="new_environmentaa" />
+                <option name="name" value="New Environmentaa" />
+              </environmentState>
+            </list>
+          </option>
+          <option name="id" value="new_groupaaa" />
+          <option name="name" value="New Groupaaa" />
+        </environmentGroupState>
+      </list>
+    </option>
     <option name="id" value="407104da-4fd8-4ffb-898e-940525558fff" />
   </component>
 </project>

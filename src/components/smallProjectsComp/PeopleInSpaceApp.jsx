@@ -8,23 +8,17 @@ const PeopleInSpaceApp = ({setProjects, size}) => {
     let description = "Displays the PeopleInSpace info"
     let link = "/ppl-in-space"
 
-    let peopleInSpace = [name, link, description]
+    let peopleInSpace = {name: name, link: link, description: description}
 
     useEffect(() => {
         setProjects(smallProjectList => [...smallProjectList, peopleInSpace]);
     }, [])
 
-
-    function appClickHandler(nameApp) {
-    }
-
-    return (
-        <Link to={link}>
-            <SiStartrek size={size}
-                        className={"sProjIcon"}
-                        onClick={appClickHandler}/>
-        </Link>
-    )
+    return (<Link to={link}>
+        <SiStartrek size={size}
+                    className={"sProjIcon"}
+        />
+    </Link>)
 
 };
 

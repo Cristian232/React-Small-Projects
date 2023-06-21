@@ -1,6 +1,5 @@
 import StyledContent from "../../styledComp/StyledContent";
 
-
 const Content = () => {
     return (
         <StyledContent className={"content"}>
@@ -10,7 +9,6 @@ const Content = () => {
                 <p className={"pContent"}>Huh ? &#128556; Land what ? &#128543; Where ? &#128550; What's going on here ? &#128552;</p>
                 <p className={"pContent"}>Dolorem facere labore fugiam, fugiat, fugit? </p>
                 <p className={"pContent"}>This is here because Chat-GPT did not provide any quality content at the time  &#128580; </p>
-
             </div>
         </StyledContent>
     );
