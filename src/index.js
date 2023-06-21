@@ -29,7 +29,7 @@ import ContentMovieApiApp
 
 const router = createBrowserRouter([
 
-    {   path:"http://Cristian232.github.io/React-Small-Projects",
+    {  // path:"http://Cristian232.github.io/React-Small-Projects",
         element: <App/>,
         children: [
             {path: "contact", element: <ContentContact/>},
